@@ -25,7 +25,7 @@ import { drawLinkedList } from "./List.js";
 import { draw1DArray, draw2DArray } from "./Grid.js";
 import { drawTree } from "./Tree.js";
 import { drawBar } from "./Bar.js";
-import CodeOverlay from './CodeOverlay';
+import CodeOverlay from './CodeOverlay.jsx';
 import clone from 'clone';
 
 import Filter1Icon from '@mui/icons-material/Filter1';

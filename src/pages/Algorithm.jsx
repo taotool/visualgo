@@ -22,33 +22,29 @@ algPanel和algMap是用来管理不同算法和数据结构的引用和组件。
 
 
 */
-import "./Algorithm.css";
-import { useState, useEffect, useRef, useCallback, memo } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import TGraph from './TGraph';
-import TTree from './TTree';
-import TList from './TList';
-import TGrid from './TGrid';
-import TStack from './TStack';
-import TQueue from './TQueue';
-import TCombo from './TCombo';
-import TSorting from './TSorting';
-import TSearching from './TSearching';
-import TArray from './TArray';
-import AlgPanel from "./AlgPanel";
-import ControlPanel from './ControlPanel';
-import MenuPanel from './MenuPanel';
-import StatusPanel from './StatusPanel';
-import { Allotment } from "allotment";
-import "allotment/dist/style.css";
-import * as React from 'react';
-import Stack from '@mui/material/Stack';
+import "./Algorithm.css";
+// import TGraph from './TGraph';
+// import TTree from './TTree';
+// import TList from './TList';
+// import TGrid from './TGrid';
+// import TStack from './TStack';
+// import TQueue from './TQueue';
+// import TCombo from './TCombo';
+// import TSorting from './TSorting';
+// import TSearching from './TSearching';
+// import TArray from './TArray';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { IconButton } from "@mui/material";
-import CloseIcon from '@mui/icons-material/Close';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import CodeOverlay from './CodeOverlay'; // Ensure the path is correct
-import * as d3 from "d3";
+import Stack from '@mui/material/Stack';
+import { Allotment } from "allotment";
+import "allotment/dist/style.css";
+import AlgPanel from "./AlgPanel.jsx";
+import CodeOverlay from './CodeOverlay.jsx'; // Ensure the path is correct
+import ControlPanel from './ControlPanel.jsx';
+import MenuPanel from './MenuPanel.jsx';
+import StatusPanel from './StatusPanel.jsx';
 
 console.log("######### Algorithm.js ######### ");
 const isSpeechRecognitionAvailable = (typeof window.SpeechRecognition !== "undefined" || typeof window.webkitSpeechRecognition !== "undefined");
@@ -99,83 +95,83 @@ function Algorithm() {
         id={id}
     />;
     const algMap = {
-        "ttrees": {
-            ref: treesRef,
-            component: <TTree ref={treesRef}
-                onNodeClicked={(d3node, evt, sa) => { setSupportedAlgorithms(sa); }}
-                id={id}
-            />
-        },
-        "tgrids": {
-            ref: gridsRef,
-            component: <TGrid ref={gridsRef}
-                onNodeClicked={(node, evt, sa) => { setSupportedAlgorithms(sa); }}
-                id={id} />
-        },
-        "tstacks": {
-            ref: stacksRef,
-            component: <TStack ref={stacksRef} onNodeClicked={(node, evt, sa) => {
-                console.log("grid cell is clicked " + node + ", " + evt + ", " + sa)
-                setSupportedAlgorithms(sa)
+        // "ttrees": {
+        //     ref: treesRef,
+        //     component: <TTree ref={treesRef}
+        //         onNodeClicked={(d3node, evt, sa) => { setSupportedAlgorithms(sa); }}
+        //         id={id}
+        //     />
+        // },
+        // "tgrids": {
+        //     ref: gridsRef,
+        //     component: <TGrid ref={gridsRef}
+        //         onNodeClicked={(node, evt, sa) => { setSupportedAlgorithms(sa); }}
+        //         id={id} />
+        // },
+        // "tstacks": {
+        //     ref: stacksRef,
+        //     component: <TStack ref={stacksRef} onNodeClicked={(node, evt, sa) => {
+        //         console.log("grid cell is clicked " + node + ", " + evt + ", " + sa)
+        //         setSupportedAlgorithms(sa)
 
-            }} />
-        },
-        "tsorting": {
-            ref: barsRef,
-            component: <TSorting ref={barsRef} onNodeClicked={(node, evt, sa) => {
-                console.log("bar is clicked " + node + ", " + evt + ", " + sa)
-                setSupportedAlgorithms(sa)
+        //     }} />
+        // },
+        // "tsorting": {
+        //     ref: barsRef,
+        //     component: <TSorting ref={barsRef} onNodeClicked={(node, evt, sa) => {
+        //         console.log("bar is clicked " + node + ", " + evt + ", " + sa)
+        //         setSupportedAlgorithms(sa)
 
-            }} />
-        },
-        "tsearching": {
-            ref: barsRef,
-            component: <TSearching ref={barsRef} onNodeClicked={(node, evt, sa) => {
-                console.log("bar is clicked " + node + ", " + evt + ", " + sa)
-                setSupportedAlgorithms(sa)
+        //     }} />
+        // },
+        // "tsearching": {
+        //     ref: barsRef,
+        //     component: <TSearching ref={barsRef} onNodeClicked={(node, evt, sa) => {
+        //         console.log("bar is clicked " + node + ", " + evt + ", " + sa)
+        //         setSupportedAlgorithms(sa)
 
-            }} />
-        },
-        "tlists": {
-            ref: listsRef,
-            component: <TList ref={listsRef} onNodeClicked={(node, evt, sa) => {
-                console.log("list node is clicked " + node + ", " + evt + ", " + sa)
-                setSupportedAlgorithms(sa)
+        //     }} />
+        // },
+        // "tlists": {
+        //     ref: listsRef,
+        //     component: <TList ref={listsRef} onNodeClicked={(node, evt, sa) => {
+        //         console.log("list node is clicked " + node + ", " + evt + ", " + sa)
+        //         setSupportedAlgorithms(sa)
 
-            }} />
-        },
-        "tarrays": {
-            ref: arraysRef,
-            component: <TArray ref={arraysRef} onNodeClicked={(node, evt, sa) => {
-                console.log("array cell is clicked " + node + ", " + evt + ", " + sa)
-                setSupportedAlgorithms(sa)
+        //     }} />
+        // },
+        // "tarrays": {
+        //     ref: arraysRef,
+        //     component: <TArray ref={arraysRef} onNodeClicked={(node, evt, sa) => {
+        //         console.log("array cell is clicked " + node + ", " + evt + ", " + sa)
+        //         setSupportedAlgorithms(sa)
 
-            }} />
-        },
-        "tqueues": {
-            ref: queuesRef,
-            component: <TQueue ref={queuesRef}
-                onNodeClicked={(d3node, evt, sa) => { setSupportedAlgorithms(sa); }}
-                id={id}
-            />
-        },
-        "tcombos": {
-            ref: combosRef,
-            component: <TCombo ref={combosRef}
-                onNodeClicked={(d3node, evt, sa) => { setSupportedAlgorithms(sa); }}
-                id={id}
-            />
-        },
-        "tgraphs": {
-            ref: graphsRef,
-            component: <TGraph ref={graphsRef} onNodeClicked={(node, event, sa) => {
-                console.log("graph node is clicked " + node + ", " + event + ", " + sa)
-                setSupportedAlgorithms(sa)
+        //     }} />
+        // },
+        // "tqueues": {
+        //     ref: queuesRef,
+        //     component: <TQueue ref={queuesRef}
+        //         onNodeClicked={(d3node, evt, sa) => { setSupportedAlgorithms(sa); }}
+        //         id={id}
+        //     />
+        // },
+        // "tcombos": {
+        //     ref: combosRef,
+        //     component: <TCombo ref={combosRef}
+        //         onNodeClicked={(d3node, evt, sa) => { setSupportedAlgorithms(sa); }}
+        //         id={id}
+        //     />
+        // },
+        // "tgraphs": {
+        //     ref: graphsRef,
+        //     component: <TGraph ref={graphsRef} onNodeClicked={(node, event, sa) => {
+        //         console.log("graph node is clicked " + node + ", " + event + ", " + sa)
+        //         setSupportedAlgorithms(sa)
 
-            }}
-                id={id}
-            />
-        },
+        //     }}
+        //         id={id}
+        //     />
+        // },
     };
 
 
