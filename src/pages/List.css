@@ -1,0 +1,11 @@
+
+#lists svg g .link line{
+
+    stroke: var(--font-color);
+  }
+
+  
+#lists svg g .link polygon{
+  fill: var(--font-color);
+  stroke: var(--font-color);
+}

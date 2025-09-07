@@ -1,0 +1,34 @@
+
+#bar svg g {
+  -fill: yellow;
+}
+
+#bar svg g rect {
+  fill: var(--font-color);
+  -fill: steelblue;
+}
+svg g text {
+  fill: var(--font-color);
+}
+#bar svg g .prehigh rect{
+  fill: aqua;
+}
+#bar svg g .highlight rect{
+  fill: orange;
+}
+
+#bar svg g .posthigh rect{
+  fill: gray;
+  opacity: 0.5;
+}
+
+
+.highlighted {
+    fill: red;
+    font-weight: bold;
+}
+
+.dimmed {
+    fill: gray;
+    opacity: 0.5;
+}

@@ -1,0 +1,42 @@
+
+.FlexScrollPaneInFlex {
+    -flex: 1;
+    height: 100%;
+    width: 100%;
+    border: 0px solid red;
+    overflow-X: hidden;
+    overflow-Y: auto;
+
+    display: flex;
+    flex-direction: column
+}
+
+
+/*
+.hSplitPaneRight {
+    min-width: 0;
+    max-width:  250px;
+    width: 52px !important;
+}
+.vSplitPaneBottom {
+    min-width: 0;
+    max-width:  0;
+    width: 0;
+}
+*/
+.light {
+    --invert: 0%;
+
+}
+
+.dark {
+    --invert: 100%;
+    --contrast: 90%;
+    --brightness: 100%;
+    --hue-rotate: 180deg;
+}
+
+.imgFilter {
+    filter: invert(var(--invert)) hue-rotate(var(--hue-rotate)) brightness(var(--brightness)) contrast(var(--contrast));
+
+}

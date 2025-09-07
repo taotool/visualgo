@@ -1,0 +1,24 @@
+svg g rect {
+  fill: var(--back-color);
+  stroke: var(--font-color);
+}
+svg g rect.prehigh {
+  fill: aqua;
+}
+svg g rect.highlight {
+  fill: orange;
+}
+
+svg g rect.posthigh {
+  fill: purple;
+}
+
+.fade-out {
+    opacity: 0;
+    -transition: opacity 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}

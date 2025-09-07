@@ -1,0 +1,68 @@
+#tree svg g .node:hover {
+    cursor: pointer;
+}
+
+#tree svg g .node circle {
+    fill: var(--font-color) ;
+    stroke: var(--font-color) ;
+}
+  
+#tree svg g .node.highlight circle {
+    stroke: orange;
+    stroke-width: 2;
+    fill: orange;
+}
+
+#tree svg g .node.prehigh circle {
+    stroke: aqua;
+    stroke-width: 2;
+    fill: aqua;
+}
+
+#tree svg g .node.posthigh circle {
+    stroke: purple;
+    stroke-width: 2;
+    fill: purple;
+}
+
+#tree svg g .node.cloned circle {
+    stroke: greenyellow;
+    stroke-width: 2;
+    fill: greenyellow;
+}
+
+
+#tree svg g .node.hidden circle {
+
+    fill: var(--back-color) ;
+    stroke: var(--back-color) ;
+}
+#tree svg g .node.hidden text {
+    stroke: var(--back-color) ;
+    fill: var(--back-color) ;
+}
+
+#tree svg g .link {
+    fill: var(--font-color) ;
+    stroke: var(--font-color) ;
+}
+#tree svg g .link.highlight {
+    stroke: orange;
+    stroke-width: 2;
+    fill: orange;
+}
+
+#tree svg g .link.prehigh {
+    stroke: aqua;
+    stroke-width: 2;
+    fill: aqua;
+}
+
+#tree svg g .link.posthigh {
+    stroke: purple;
+}
+
+#tree svg g .link.hidden {
+    stroke: var(--back-color) ;
+}
+

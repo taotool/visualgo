@@ -1,0 +1,156 @@
+
+/*
+css notes:
+1. parent block (default), children height=100%
+2. parent flex, children flex=1
+*/
+.graphviz {
+    border: 0px solid purple;
+    position: relative;
+    height: 100%;
+}
+
+.graphviz svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*整个图的背景*/
+.graphviz svg g polygon   {
+fill: var(--back-color);/*graph back ground #121212;*/
+
+-stroke: none;/*这个是整个图的边框*//*graph border and edge arrow, and everything*/
+}
+
+/*edge arrow*/
+.graphviz svg g .edge polygon   {
+  stroke: var(--font-color);
+  fill: var(--font-color);
+}
+
+.graphviz svg g text {
+    fill: var(--font-color);
+}
+/*edge color*/
+.graphviz svg g .edge path   {
+  stroke: var(--font-color);
+  fill: none;/*必须为none，否则会盖住其他文字*/
+}
+/*arrow fill background color while transitioning -- it is pologon normally, but becomes path when transitioning*/
+.graphviz svg g .edge.graph_label path   {
+  fill: var(--font-color);
+}
+
+
+/*background color while transitioning*/
+.graphviz svg g path   {
+  fill: var(--back-color);
+}
+
+/*算法图*/
+
+.graphviz svg g .node:hover {
+    cursor: pointer;
+}
+.graphviz svg g  ellipse   {
+  stroke: var(--font-color);
+  fill: var(--font-color);
+}
+/*node label color*/
+.graphviz svg g text {
+  fill: var(--font-color);
+}
+/*图高亮
+一种是改dot
+一种是改css
+            a33 [label="", xlabel="a33", color="orange",style=filled, fillcolor="yellow"];
+*/
+
+.graphviz svg g .prehigh ellipse {
+  stroke: aqua;
+  fill: aqua;
+}
+.graphviz svg g .prehigh path {
+  stroke: aqua;
+}
+.graphviz svg g .prehigh polygon {
+  stroke: aqua;
+  fill: aqua;
+}
+
+.graphviz svg g .posthigh ellipse {
+  fill: purple;
+  stroke: purple;
+}
+.graphviz svg g .posthigh path {
+  stroke: purple;
+}
+.graphviz svg g .posthigh polygon {
+  fill: purple;
+  stroke: purple;
+}
+
+.graphviz svg g .highlight ellipse {
+  fill: orange;
+  stroke: orange;
+}
+.graphviz svg g .highlight path {
+  stroke: orange;
+}
+.graphviz svg g .highlight polygon {
+  fill: orange;
+  stroke: orange;
+}
+
+.graphviz svg g .posthigh ellipse {
+  fill: purple;
+  stroke: purple;
+}
+.graphviz svg g .posthigh path {
+  stroke: purple;
+}
+.graphviz svg g .posthigh polygon {
+  fill: purple;
+  stroke: purple;
+}
+
+.graphviz svg g .first ellipse {
+  fill: chartreuse;
+  stroke: chartreuse;
+}
+.graphviz svg g .first path {
+  stroke: chartreuse;
+}
+.graphviz svg g .first polygon {
+  fill: chartreuse;
+  stroke: chartreuse;
+}
+
+.graphviz svg g .second ellipse {
+  fill: red;
+  stroke: red;
+}
+.graphviz svg g .second path {
+  stroke: red;
+}
+.graphviz svg g .second polygon {
+  fill: red;
+  stroke: red;
+}
+
+/*background color while transitioning*/
+.graphviz svg g  path   {
+  fill: var(--back-color);
+}
+
+/*border color without the outermost*/
+.graphviz svg g .graph_node_table path   {
+  stroke: var(--font-color);
+}
+
+.graphviz svg g .graph_node_table polygon   {
+  stroke: var(--font-color);
+}
