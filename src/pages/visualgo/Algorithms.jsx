@@ -39,13 +39,13 @@ function Algorithms() {
   return (
     <Box sx={{ flexGrow: 1, p: 0 }} style={{ margin: '0px' }}>
       
-      <Typography
+      {/* <Typography
         variant="body2"
         sx={{ color: 'text.secondary', textTransform: 'uppercase', cursor: 'pointer', paddingLeft:"5px"}}
-        onClick={() => navigate('/algorithms')}
+        onClick={() => navigate('/visualgo')}
       >
         {alg && "all | " + alg}
-      </Typography>
+      </Typography> */}
 
       <Grid
         container

@@ -21,7 +21,7 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 // import IconButton from "@mui/material/IconButton";
 // import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { algorithms } from "../algs";
+import { algorithms } from "./algs";
 import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 

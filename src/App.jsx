@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css"
-import Algorithms from "./pages/Algorithms.jsx";
-import Algorithm from "./pages/Algorithm.jsx";
+import Algorithms from "./pages/visualgo/Algorithms.jsx";
+import Algorithm from "./pages/visualgo/Algorithm.jsx";
 function App() {
-  useEffect(() => {
-    // fetchData();
-  }, []);
-
-
-
   return (
     <BrowserRouter>
       <Routes>
